@@ -1,5 +1,5 @@
 $(document).ready(function(){
-  $("#butt").click(function(){
+  $("#signup").click(function(){
     $.get({
       url:'/ajax',
       data:{ 
@@ -9,7 +9,9 @@ $(document).ready(function(){
       },
       success: function(res) {
         console.log(res)
-        $('#res').html('saveed')
+        $("#ID").hide();
+        $("#passW").hide();
+        $('#res').html('Hello')
       }
     })
     
