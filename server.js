@@ -6,7 +6,7 @@ app.listen(7788)
 var store = []
 var fs = require('fs')
 app.get('/', (req, res) => {//一條斜線的門
-  res.sendfile('public/index.html')
+  res.sendFile('public/non.html')
 })
 
 app.get('/ajax', (req, res) => {
