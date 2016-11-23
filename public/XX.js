@@ -11,7 +11,12 @@ $(document).ready(function(){
         console.log(res)
         $("#ID").hide();
         $("#passW").hide();
-        $('#res').html('Hello')
+        $("#signup").hide()
+        $("#signin").hide()
+        $('#res').html( $('#ID').val())
+      },
+      error: function(err) {
+        
       }
     })
     
