@@ -5,7 +5,7 @@ $(document).ready(function(){
       data:{ 
         id: $('#ID').val(),
         pwd:$('#passW').val(),
-
+        date:new Date(),
       },
       success: function(res) {
         console.log(res)

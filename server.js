@@ -1,5 +1,5 @@
 var express = require('express') //express加進來
-var mysql = require('mysql');
+var mysql = require('mysql')
 var app = express()
 
 var connection = mysql.createConnection({
@@ -9,16 +9,12 @@ var connection = mysql.createConnection({
   databaes:'wp2016_groupA'
 
 
-});
+})
 
 connection.connect(function(err) {
-  if (err) {
-      console.error('error connecting: ' + err.stack);
-      return;
-  }
-             
-  console.log('connected as id ' + connection.threadId);
-});
+  if (err) throw err
+  console.log('connected as id ' + connection.threadId)
+})
 
 
 
@@ -37,14 +33,16 @@ app.get('/', function(req, res){//一條斜線的門
     }else{
       conslole.log('Successful');
     }*/
-});
+})
 
 app.get('/ajax', (req, res) => {
-  console.log(store)//印出資料
-  store.push(req.query)
-  fs.writeFile("mem.json", JSON.stringify(store), function(err) {
-      if(err) throw (err)
-      console.log("The file was saved!")
-  })
+//  console.log(store)//印出資料
+//  store.push(req.query)
+//  fs.writeFile("mem.json", JSON.stringify(store), function(err) {
+//      if(err) throw (err)
+//      console.log("The file was saved!")
+//  })
+
+  connection.query(`INSERT INTO  wp2016_groupA.accounts(ID ,pwd ,time)VALUES ('${req.query.id}','${req.query.pwd}'  ,'${req.query.date}')`, function(err) { if(err) throw err })
   res.send(req.query.id )
 })
