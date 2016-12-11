@@ -45,4 +45,5 @@ app.get('/ajax', (req, res) => {
 
   connection.query(`INSERT INTO  wp2016_groupA.accounts(ID ,pwd ,time)VALUES ('${req.query.id}','${req.query.pwd}'  ,'${req.query.date}')`, function(err) { if(err) throw err })
   res.send(req.query.id )
+//  connection.query()
 })
