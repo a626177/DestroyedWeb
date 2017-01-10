@@ -11,9 +11,9 @@
     font-family: "Times New Roman", Georgia, Serif;
     }
     canvas{
-        background:white;
-        cursor:url(rectangle-stamp-heavy_grande.gif) 64 120,auto;}
-    canvas:active{cursor:url(rectangle-stamp-heavy_grande.gif) 64 90,auto;}
+        background:white;        
+        cursor:default;}
+    
 img{
 width:auto;
 height:100px;}
@@ -52,7 +52,7 @@ img:hover{
 <img id="URGENT" onclick="chose(this)" src="/pic/urgent-rubber-stamp-totally-uncorked-on-marketing-mZzydr-clipart.png">
 <img id="HILLARY" onclick="chose(this)" src="/pic/hillary.png" >
 <img id="TRUMP" onclick="chose(this)" src="/pic/trump.png">
-<img id="ANT" onclick="chose(this)" src="/pic/ant.png">
+<img id="ANT" onclick="ant(this)" src="/pic/ant.png">
     </div>
 <div><canvas onclick="getcoords(event)"  id="myCanvas" width = "0" height = "0" style=" border:1px solid #d3d3d3;">
 Your browser does not support the HTML5 canvas tag.
@@ -178,7 +178,12 @@ ctx.putImageData(imgData, x, y);
         
         
     },10);}
-}    
+}
+function ant(element){
+    $('canvas').css({
+    'cursor': 'url(/pic/rectangle-stamp-heavy_grande.gif), default'});
+    chose(element);
+}
 </script>
 
 </body>
