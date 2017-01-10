@@ -101,6 +101,15 @@ y=(event.clientY-Y+$(document).scrollTop())-h/2;
 ctx.drawImage(img,x,y,w,h);
 //document.getElementById('myCanvas').innerHTML = "<embed width=0 height=0 src="stm.mp3" autostart='true'></embed>";
 }
+     //用js宣告一個超連結
+    var link = document.createElement('a');
+    link.innerHTML = 'download image';
+    link.addEventListener('click', function(ev) {
+    link.href = canvas.toDataURL();
+    link.download = "mypainting.png";
+    }, false);
+    document.body.appendChild(link);
+
 //var music=new Array("stm.mp3","stm.mp3","stm.mp3");
 //function playSound(){
     //在Div內放置Embed並指定其src = 某音效位置
