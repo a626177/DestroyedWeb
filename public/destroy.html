@@ -75,6 +75,15 @@ var v=0;
 var background = new Image();
 var count=0;
 
+function play(){
+       var audio = document.createElement("audio");
+	   if(id=="HILLARY"){audio.src ="man.mp3";}
+	   else if(id=="TRUMP"){audio.src ="woman.mp3";}
+	   else if(id=="ANT"){audio.src ="kc.mp3" ;}
+	   else{audio.src ="stm.mp3" ;}
+       audio.play();
+                 }	
+	
 function addstamp(){
     var img1 = document.createElement("img");
     img1.crossOrigin = 'Anonymous';//改變權限
@@ -100,6 +109,7 @@ w=img.clientWidth;
 }
 
 function getcoords(event){
+play();
 var h=img.clientHeight;
 var w=img.clientWidth;
 if(id=="ANT"){w=10;h=10;}
