@@ -77,6 +77,7 @@ var count;
 var img1;
 function addstamp(){
     img1 = document.createElement("img");
+    img1.crossOrigin = 'Anonymous'//改變權限
     img1.src = document.getElementsByName("stamp")[0].value;
     img1.id = count;
     document.body.appendChild(img1);
@@ -85,6 +86,7 @@ function addstamp(){
 }
 function submit(){
     background.src = document.getElementsByName("fname")[0].value;
+    background.crossOrigin = 'Anonymous'//改變權限
     document.getElementById('myCanvas').height = background.height;
     document.getElementById('myCanvas').width = background.width;
     ctx.drawImage(background, 0, 0);
